@@ -14,6 +14,81 @@ int jogo(char pos[9]){
     return(0);
 }
 
+int testWin(char pos[9], int jogador, int jogada){
+    //Aqui eu começo a fazer as verificações de vitória, abrangindo caso de empate (velha) e os 8 casos possíveis de vitória.
+        if (jogada == 9){ //Caso seja a jogada 9 é dado empate
+            jogo(pos); //Imprimo o jog na tela
+            printf("VELHA! \n"
+                   "Nenhum jogador venceu!");
+            //Finalizo o programa com o comando exit(0);
+            exit(0);
+        } else if (pos[6]=='X' && pos[7]=='X' && pos[8]=='X' || pos[6]=='O' && pos[7]=='O' && pos[8]=='O'){
+            jogo(pos);
+            if (jogador == 0){
+                printf("Parabéns jogador O!\n Você venceu!!");
+            } else {
+                printf("Parabéns jogador X!\n Você venceu!!");
+            }
+            exit(0);
+        } else if (pos[3]=='X' && pos[4]=='X' && pos[5]=='X' || pos[3]=='O' && pos[4]=='O' && pos[5]=='O'){
+            jogo(pos);
+            if (jogador == 0){
+                printf("Parabéns jogador O!\n Você venceu!!");
+            } else {
+                printf("Parabéns jogador X!\n Você venceu!!");
+            }
+            exit(0);
+        } else if (pos[0]=='X' && pos[1]=='X' && pos[2]=='X' || pos[0]=='O' && pos[1]=='O' && pos[2]=='O'){
+            jogo(pos);
+            if (jogador == 0){
+                printf("Parabéns jogador O!\n Você venceu!!");
+            } else {
+                printf("Parabéns jogador X!\n Você venceu!!");
+            }
+            exit(0);
+        } else if (pos[6]=='X' && pos[3]=='X' && pos[0]=='X' || pos[6]=='O' && pos[3]=='O' && pos[0]=='O'){
+            jogo(pos);
+            if (jogador == 0){
+                printf("Parabéns jogador O!\n Você venceu!!");
+            } else {
+                printf("Parabéns jogador X!\n Você venceu!!");
+            }
+            exit(0);
+        } else if (pos[7]=='X' && pos[4]=='X' && pos[1]=='X' || pos[7]=='O' && pos[4]=='O' && pos[1]=='O'){
+            jogo(pos);
+            if (jogador == 0){
+                printf("Parabéns jogador O!\n Você venceu!!");
+            } else {
+                printf("Parabéns jogador X!\n Você venceu!!");
+            }
+            exit(0);
+        } else if (pos[8]=='X' && pos[5]=='X' && pos[2]=='X' || pos[8]=='O' && pos[5]=='O' && pos[2]=='O'){
+            jogo(pos);
+            if (jogador == 0){
+                printf("Parabéns jogador O!\n Você venceu!!");
+            } else {
+                printf("Parabéns jogador X!\n Você venceu!!");
+            }
+            exit(0);
+        } else if (pos[6]=='X' && pos[4]=='X' && pos[2]=='X' || pos[6]=='O' && pos[4]=='O' && pos[2]=='O'){
+            jogo(pos);
+            if (jogador == 0){
+                printf("Parabéns jogador O!\n Você venceu!!");
+            } else {
+                printf("Parabéns jogador X!\n Você venceu!!");
+            }
+            exit(0);
+        } else if (pos[8]=='X' && pos[4]=='X' && pos[0]=='X' || pos[8]=='O' && pos[4]=='O' && pos[0]=='O'){
+            jogo(pos);
+            if (jogador == 0){
+                printf("Parabéns jogador O!\n Você venceu!!");
+            } else {
+                printf("Parabéns jogador X!\n Você venceu!!");
+            }
+            exit(0);
+        }
+}
+
 int main(int argc, char** argv) {
     
     setlocale(LC_ALL,"portuguese"); //Comando para utilização de caracteres especiais!
@@ -53,79 +128,8 @@ int main(int argc, char** argv) {
         
         jogada = jogada+1; //Somo o valor da jogada em 1
         
+        testWin(pos, jogador, jogada);
         
-        //Aqui eu começo a fazer as verificações de vitória, abrangindo caso de empate (velha) e os 8 casos possíveis de vitória.
-        if (jogada == 9){ //Caso seja a jogada 9 é dado empate
-            jogo(pos); //Imprimo o jogo na tela
-            printf("VELHA! \n"
-                   "Nenhum jogador venceu!");
-            //Finalizo o programa com o comando exit(0);
-            exit(0);
-        } else if (pos[6]=='X' && pos[7]=='X' && pos[8]=='X' || pos[6]=='O' && pos[7]=='O' && pos[8]=='O'){
-            jogo(pos);
-            if (jogador == 0){
-                printf("Parabéns jogador O! Você venceu!!");
-            } else {
-                printf("Parabéns jogador X! Você venceu!!");
-            }
-            exit(0);
-        } else if (pos[3]=='X' && pos[4]=='X' && pos[5]=='X' || pos[3]=='O' && pos[4]=='O' && pos[5]=='O'){
-            jogo(pos);
-            if (jogador == 0){
-                printf("Parabéns jogador O! Você venceu!!");
-            } else {
-                printf("Parabéns jogador X! Você venceu!!");
-            }
-            exit(0);
-        } else if (pos[0]=='X' && pos[1]=='X' && pos[2]=='X' || pos[0]=='O' && pos[1]=='O' && pos[2]=='O'){
-            jogo(pos);
-            if (jogador == 0){
-                printf("Parabéns jogador O! Você venceu!!");
-            } else {
-                printf("Parabéns jogador X! Você venceu!!");
-            }
-            exit(0);
-        } else if (pos[6]=='X' && pos[3]=='X' && pos[0]=='X' || pos[6]=='O' && pos[3]=='O' && pos[0]=='O'){
-            jogo(pos);
-            if (jogador == 0){
-                printf("Parabéns jogador O! Você venceu!!");
-            } else {
-                printf("Parabéns jogador X! Você venceu!!");
-            }
-            exit(0);
-        } else if (pos[7]=='X' && pos[4]=='X' && pos[1]=='X' || pos[7]=='O' && pos[4]=='O' && pos[1]=='O'){
-            jogo(pos);
-            if (jogador == 0){
-                printf("Parabéns jogador O! Você venceu!!");
-            } else {
-                printf("Parabéns jogador X! Você venceu!!");
-            }
-            exit(0);
-        } else if (pos[8]=='X' && pos[5]=='X' && pos[2]=='X' || pos[8]=='O' && pos[5]=='O' && pos[2]=='O'){
-            jogo(pos);
-            if (jogador == 0){
-                printf("Parabéns jogador O! Você venceu!!");
-            } else {
-                printf("Parabéns jogador X! Você venceu!!");
-            }
-            exit(0);
-        } else if (pos[6]=='X' && pos[4]=='X' && pos[2]=='X' || pos[6]=='O' && pos[4]=='O' && pos[2]=='O'){
-            jogo(pos);
-            if (jogador == 0){
-                printf("Parabéns jogador O! Você venceu!!");
-            } else {
-                printf("Parabéns jogador X! Você venceu!!");
-            }
-            exit(0);
-        } else if (pos[8]=='X' && pos[4]=='X' && pos[0]=='X' || pos[8]=='O' && pos[4]=='O' && pos[0]=='O'){
-            jogo(pos);
-            if (jogador == 0){
-                printf("Parabéns jogador O! Você venceu!!");
-            } else {
-                printf("Parabéns jogador X! Você venceu!!");
-            }
-            exit(0);
-        }
     }
     return (EXIT_SUCCESS);
 }
